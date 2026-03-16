@@ -16,7 +16,7 @@ import io
 MODELO_PATH = r"C:/Users/USUARIO\Desktop/prototipoFlask/models/best.pt"
 CONF_THRESHOLD = 0.25
 
-OCR_API_KEY = "K8715073538895"
+OCR_API_KEY = ""
 OCR_API_URL = "https://api.ocr.space/parse/image"
 
 # ======================================================
