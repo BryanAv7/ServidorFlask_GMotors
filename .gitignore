@@ -1,9 +1,8 @@
-# Entorno virtual
-venv/
-.env/
-__pycache__/
-*.pyc
+# Ignorar todo
+*
 
-# Archivos de sistema
-.DS_Store
-Thumbs.db
+# Permitir main.py
+!main.py
+
+# Permitir el propio gitignore
+!.gitignore

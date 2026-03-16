@@ -13,10 +13,10 @@ import io
 # ======================================================
 # CONFIGURACIÓN
 # ======================================================
-MODELO_PATH = r"C:/Users/USUARIO/runs/obb/placas_motos_OBB2/weights/best.pt"
-CONF_THRESHOLD = 0.70
+MODELO_PATH = r"C:/Users/USUARIO\Desktop/prototipoFlask/models/best.pt"
+CONF_THRESHOLD = 0.25
 
-OCR_API_KEY = ""
+OCR_API_KEY = "K8715073538895"
 OCR_API_URL = "https://api.ocr.space/parse/image"
 
 # ======================================================
@@ -26,6 +26,7 @@ app = Flask(__name__)
 
 print("Cargando YOLO...")
 model = YOLO(MODELO_PATH)
+model.to("cpu")
 print("✓ YOLO cargado")
 
 # ======================================================
@@ -144,8 +145,6 @@ def extraer_candidatos_placa(texto: str) -> list:
 
 
 def formatear_placa(texto: str) -> str:
-    if len(texto) >= 2 and texto[0].isalpha() and texto[1].isalpha():
-        return texto[:2] + '-' + texto[2:]
     return texto
 
 
